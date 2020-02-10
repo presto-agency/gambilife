@@ -1,0 +1,81 @@
+.input{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-top: 76px;
+    &-container{
+      position: relative;
+        &-label{
+          position: absolute;
+          top: 6px;
+          left: 15px;
+          color: #80a2cc;
+          font-size: 14px;
+          text-transform: uppercase;
+          white-space: nowrap;
+        }
+        .bitcoin{
+          position: absolute;
+          bottom: 15px;
+          left: 15px;
+        }
+    }
+    &-item{
+      width: 100%;
+      max-width: 265px;
+      font-size: 20px;
+      font-weight: 900;
+      font-family: inherit;
+      color: #ffffff;
+      border: 1px transparent solid;
+      height: 57px;
+      background-color: #0a1a33;
+      border-radius: 8px 0 0 8px;
+      padding: 20px 5px 5px 35px;
+      transition: background-color .4s ease, border-color .4s ease;
+        &:focus{
+          outline: none;
+          border-color: #275E9A;
+        }
+        &:hover{
+          background-color: #102A53;
+        }
+    }
+    &-btns{
+      white-space: nowrap;
+        &-item{
+          width: 58px;
+          height: 57px;
+          line-height: 57px;
+          text-align: center;
+          background-color: #275E9A;
+          font-size: 14px;
+          font-weight: 300;
+          border: none;
+          margin-right: 1px;
+          cursor: pointer;
+          transition: background-color .4s ease;
+          color: #ffffff;
+            &:last-child{
+              border-radius: 0 8px 8px 0;
+            }
+            &:hover{
+              background-color: #0a1a33;
+            }
+            &:focus{
+              outline: none;
+            }
+        }
+    }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance:textfield;
+}

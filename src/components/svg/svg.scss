@@ -1,0 +1,22 @@
+.svg{
+  &-container{
+    text-align: center;
+    position: relative;
+      &-image{
+        cursor: pointer;
+          &.__top{
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%,0);
+            top: 95px;
+            transition: top .5s ease;
+            pointer-events: none;
+          }
+          &:hover{
+            & ~ .__top{
+              top: 55px;
+            }
+          }
+      }
+  }
+}
