@@ -23,7 +23,7 @@ class BetsContainer extends Component {
                     {({ data }) => {
 
                         console.log(data);
-                        return <BetsList />;
+                        return null;
 
                     }}
                 </Subscription>
