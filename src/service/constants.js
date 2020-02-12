@@ -9,7 +9,13 @@ export const GET_BETS = gql`
             game
             profit
             payout
-         }
+        }
+    }
+`;
+
+export const BET_ADDED = gql`
+    subscription {
+      betAdded
     }
 `;
 

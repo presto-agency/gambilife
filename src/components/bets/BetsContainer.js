@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Query } from 'react-apollo';
-import {GET_BETS} from "../../service/constants";
+import { Query, Subscription } from 'react-apollo';
+import {BET_ADDED, GET_BETS} from "../../service/constants";
 import {BetsList} from "./BetsList";
 
 class BetsContainer extends Component {
@@ -8,16 +8,26 @@ class BetsContainer extends Component {
     render() {
 
         return(
-            <Query query={GET_BETS}>
-                {
-                    ({ loading, error, data }) => {
-                        if(loading) return <p>Loading</p>;
-                        if(error) return <p>Error</p>;
+            <div>
+                <Query query={GET_BETS}>
+                    {
+                        ({ loading, error, data }) => {
+                            if(loading) return <p>Loading</p>;
+                            if(error) return <p>Error</p>;
 
-                        return <BetsList data={data} />;
+                            return <BetsList data={data} />;
+                        }
                     }
-                }
-            </Query>
+                </Query>
+                <Subscription subscription={BET_ADDED}>
+                    {({ data }) => {
+
+                        console.log(data);
+                        return <BetsList />;
+
+                    }}
+                </Subscription>
+            </div>
         )
 
     }
