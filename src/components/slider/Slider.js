@@ -1,23 +1,50 @@
-import React  from 'react';
-import ReactSlider from 'react-slider'
+import React, { Component }  from 'react';
+import { Slider } from 'antd';
 
-export const Slider = () => {
+class SliderContainer extends Component{
 
-    return(
-        <div className="slider">
-            <ReactSlider
-                className="vertical-slider"
-                thumbClassName="example-thumb"
-                trackClassName="example-track"
-                defaultValue={[0, 50, 100]}
-                ariaLabel={['Lowest thumb', 'Middle thumb', 'Top thumb']}
-                renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
-                orientation="vertical"
-                invert
-                pearling
-                minDistance={0}
-            />
-        </div>
-    )
+    constructor(props){
+        super(props);
 
-};
+        this.onChange = this.onChange.bind(this);
+    }
+
+    state = {
+        value: 50
+    };
+
+    onChange(value) {
+        this.setState({
+            value
+        });
+    }
+
+    render() {
+
+        const { value } = this.state;
+        let style= {
+          top: ( 100 - value ) + '%'
+        };
+
+        return(
+            <div className="slider">
+                <div className="slider-label __top">100</div>
+                <Slider
+                    vertical
+                    defaultValue={value}
+                    tooltipVisible={false}
+                    max={100}
+                    min={0}
+                    step={0.1}
+                    onChange={this.onChange}
+                />
+                <div className="slider-tooltip" style={style}>{value}</div>
+                <div className="slider-label __bottom">0</div>
+            </div>
+        )
+
+    }
+
+}
+
+export default SliderContainer;

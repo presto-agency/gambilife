@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Svg from "./svg/Svg";
 import BetsContainer from "./bets/BetsContainer";
-import {Slider} from "./slider/Slider";
+import SliderContainer from "./slider/Slider";
 import Input from "./input/Input";
 import Modal from "./modal/Modal";
 import { Query, ApolloConsumer } from 'react-apollo';
@@ -20,7 +20,7 @@ class App extends Component{
                     <div className="page-columns">
                         <div className="page-columns-item">
                             <div className="content">
-                                <Slider />
+                                <SliderContainer />
                                 <Input />
                             </div>
                         </div>
