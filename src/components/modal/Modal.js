@@ -18,7 +18,6 @@ class Modal extends Component {
         });
 
         document.body.classList.remove('modal-open');
-        console.log('close');
 
     }
 

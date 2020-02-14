@@ -25,7 +25,7 @@ class App extends Component{
                             </div>
                         </div>
                         <div className="page-columns-item">
-                            <div className="content">
+                            <div className="content __table">
                                 <BetsContainer />
                             </div>
                         </div>
